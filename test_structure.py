@@ -15,7 +15,7 @@ def test_imports():
     
     try:
         # Test picarx imports
-        from picarx import PiCarX
+        from picarx import Picarx
         print("✓ PiCar-X modules imported successfully")
         return True
     except ImportError as e:
@@ -28,8 +28,8 @@ def test_picarx_initialization():
     print("\nTesting PiCar-X initialization...")
     
     try:
-        from picarx import PiCarX
-        car = PiCarX()
+        from picarx import Picarx
+        car = Picarx()
         print("✓ PiCar-X initialized successfully")
         
         # Test basic methods
