@@ -133,6 +133,24 @@ sync_repo() {
   log "Pinned $dir at: $(git -C "$dir" rev-parse --short HEAD)"
 }
 
+# Shallow clone/update for vilib (SunFounder requested pattern)
+sync_vilib_shallow() {
+  local url="$1"
+  local dir="$2"
+  local ref="$3"
+
+  if [[ -d "$dir/.git" ]]; then
+    log "Updating existing repo (vilib): $dir"
+    git -C "$dir" fetch origin "$ref" --depth 1 || git -C "$dir" fetch origin "$ref" || true
+    git -C "$dir" checkout "$ref" || true
+  else
+    log "Cloning vilib (branch=$ref, depth=1): $url -> $dir"
+    git clone -b "$ref" --depth 1 "$url" "$dir"
+  fi
+
+  log "Pinned vilib at: $(git -C "$dir" rev-parse --short HEAD)"
+}
+
 # -------------------------
 # Bookworm / PEP 668 pip hardening
 # -------------------------
