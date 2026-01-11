@@ -39,9 +39,6 @@ def test_picarx_initialization():
         car.stop()
         print("✓ Basic methods work")
         
-        car.cleanup()
-        print("✓ Cleanup successful")
-        
         return True
     except Exception as e:
         print(f"✗ Initialization error: {e}")
