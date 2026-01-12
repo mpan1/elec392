@@ -293,9 +293,9 @@ echo "$TPU_OUT"
 echo "------------------------------------------------------------"
 
 if [[ "$TPU_RC" -eq 0 ]]; then
-  log "TPU detected ✅"
+  log "TPU detected!"
 else
-  warn "TPU NOT detected ❌"
+  warn "TPU NOT detected!"
   warn "Common fixes:"
   warn "  - Plug the Coral USB Accelerator directly into the Pi (avoid flaky hubs)."
   warn "  - Try a different USB port/cable."

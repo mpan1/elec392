@@ -58,27 +58,29 @@ elec392_project/
 - See `requirements.txt` for Python dependencies
 
 ## Installation
-1. Create a new folder in your home directory called 'dev':
+1. Accept the GitHub Classroom assignment to create your personal repository copy
+
+1. Create a development folder:
    ```bash
    cd ~
    mkdir dev
    cd dev
    ```
 
-1. Clone the repository:
+1. Clone your repository to your Raspberry Pi:
    ```bash
-   git clone https://github.com/mpan1/elec392.git
-   cd elec392
+   git clone <your-classroom-repository-url>
+   cd elec392_project
    ```
 
 1. Install PiCar-X repos
    ```bash
-   sudo bash setup_picarx.sh 
+   bash setup_picarx.sh 
    ```
 
 1. Install Coral repos
    ```bash
-   sudo bash setup_coral.sh 
+   bash setup_coral.sh 
    ```
 
 ## Usage
