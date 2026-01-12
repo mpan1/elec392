@@ -18,7 +18,8 @@ elec392_project/
 │   ├── 02_keyboard_control.py                     # Keyboard vehicle control example
 │   ├── 03_sound.py                                # Robot Hat sound examples (use sudo)
 │   ├── 04_ultrasonic_obstacle_avoidance.py        # Obstacle avoidance example using ultrasonic sensor
-│   └── 05_line_following.py                       # Line following demonstration
+│   ├── 05_line_following.py                       # Line following demonstration
+│   └── 06_recieve_detections_udp.py               # Receive object detections via UDP from remote detector
 ├── images/                                        # Folder for project images referenced by logbook
 ├── logbook/                                       # Folder for log entries 
 │   ├── .templates
@@ -153,6 +154,23 @@ python examples/05_line_following.py
 ```bash
 python utils/grayscale_calibration.py
 ```
+
+#### 6. UDP Detection Receiver (`06_recieve_detections_udp.py`)
+Receive object detection data from a remote detector via UDP and control the vehicle based on detections.
+
+```bash
+python examples/06_recieve_detections_udp.py
+```
+
+**What it does:**
+- Listens for object detection data over UDP from a remote detector (e.g., Coral TPU inference on another device)
+- Displays detection updates to the console
+- Controls the steering servo based on whether objects are detected
+- Acts as a fail-safe by stopping the car if no detections are received
+
+**Requirements:**
+- A remote detector sending detection data in UDP format (see `utils/detection_receiver.py` for protocol details)
+- Network connectivity between the Raspberry Pi and the detector
 
 ### Calibration Utilities
 
