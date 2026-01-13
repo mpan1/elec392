@@ -227,6 +227,9 @@ python -m pip install --extra-index-url https://google-coral.github.io/py-repo/ 
 log "Installing OpenCV into venv (opencv-python)"
 python -m pip install "opencv-python==4.11.0.86"
 
+log "Installing flatbuffers into venv (fixes TFLite metadata compatibility)"
+python -m pip install "flatbuffers==23.5.26"
+
 # ---------------------- TPU test script -----------------------
 log "Writing TPU detection test script: ${PROJECT_DIR}/list_tpus.py"
 cat > "${PROJECT_DIR}/list_tpus.py" <<'EOF'
