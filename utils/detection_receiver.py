@@ -19,6 +19,8 @@ class DetectionReceiver:
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.bind(self.addr)
         self.sock.settimeout(self.timeout)
+        # Increase receive buffer to handle burst traffic
+        self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 262144)
 
         self.latest = None
         self.packet_count = 0
